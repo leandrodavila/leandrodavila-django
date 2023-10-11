@@ -13,7 +13,7 @@ class PayrollLabView(View, SideBarMixin):
         my_context = self.get_context_sidebar()
 
         # Render the HTML template index.html with the data in the context variable
-        return render(request, 'payroll_lab/payroll_lab.html', context=my_context)
+        return render(request, 'payroll_lab/index.html', context=my_context)
 
 
 class InssView(View, SideBarMixin):
@@ -96,4 +96,4 @@ class CalcIrrfView(View, SideBarMixin):
         my_context = self.get_context_sidebar(SideBarPL.URL_ID_PLAY)
 
         # Render the HTML template index.html with the data in the context variable
-        return render(request, 'payroll_lab/gitcalc_irrf.html', context=my_context)
+        return render(request, 'payroll_lab/calc_irrf.html', context=my_context)
