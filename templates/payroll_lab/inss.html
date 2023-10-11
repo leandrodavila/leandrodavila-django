@@ -1,0 +1,86 @@
+{% extends "base_generic_top.html" %}
+{% load static %}
+{% block content %}
+<!--
+    https://getbootstrap.com/docs/5.0/layout/grid/
+    Aqui tem como usar os rows e cols
+-->
+<main class="flex-fill p-3 overflow-auto">
+    
+    <div class="container-fluid">
+
+        <div class="row flex-nowrap">
+        
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 ">
+
+                {% include "base_generic_payroll_lab.html" %}      
+                
+            </div>
+
+            <div class="col-sm-8">
+            
+                {% if inss_tables %}
+
+                    {% for inss_table in inss_tables %}
+
+                    <!-- 
+                        <div class="container-sm themed-container">
+                    -->
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h4 class="card-title"><i class="fas fa-search-dollar"></i> &nbsp;{{inss_table.description}} - Válido desde {{inss_table.valid_from}} </h4>
+                            
+                            <table class="table table-hover" border="1" width="50">
+                                <thead>
+                                <tr>
+                                <th scope="col" align="right">Faixa inicial</th>
+                                <th scope="col">Faixa final</th>
+                                <th scope="col">%</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for inss_range in inss_table.inss_ranges.all %}
+
+                                    <tr class="table-success">
+                                        
+                                        <td scope="row">{{inss_range.low_amount}}</td>
+                                        <td scope="row">{{inss_range.high_amount}}</td>
+                                        <td scope="row">{{inss_range.rate}}</td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+    
+                    {% endfor %}
+                    
+                {% else %}
+                <p class="h2">Tabelas de INSS</p>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Nenhuma informação cadastrada.
+                </div>
+          
+
+                
+                {% endif %}
+            </div> <!-- col 8-->
+
+            <div class="col-sm-5">
+                &nbsp;
+                <!-- direita-->
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

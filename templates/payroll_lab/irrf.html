@@ -1,0 +1,85 @@
+{% extends "base_generic_top.html" %}
+{% load static %}
+{% block content %}
+
+<main class="flex-fill p-3 overflow-auto">
+    
+    <div class="container-fluid">
+
+        <div class="row flex-nowrap">
+        
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 ">
+
+                {% include "base_generic_payroll_lab.html" %}      
+                
+            </div>
+
+            <div class="col-sm-8">
+            
+                {% if irrf_tables %}
+
+                    {% for irrf_table in irrf_tables %}
+
+                    <!-- 
+                        <div class="container-sm themed-container">
+                    -->
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h4 class="card-title"><i class="fas fa-search-dollar"></i> &nbsp;{{irrf_table.description}} - Válido desde {{irrf_table.valid_from}} </h4>
+
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <b>Desconto simplificado:&nbsp;</b>{{irrf_table.simplified_deduction}} - <b>Dedução por dependente:&nbsp;</b>{{irrf_table.dependent_deduction}}
+                                
+                            </div>
+                            
+                            
+                            <table class="table table-hover" border="1" width="50">
+                                <thead>
+                                <tr>
+                                <th scope="col" align="right">Faixa inicial</th>
+                                <th scope="col">Faixa final</th>
+                                <th scope="col">%</th>
+                                <th scope="col">Parcela a deduzir</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for irrf_range in irrf_table.irrf_ranges.all %}
+
+                                    <tr class="table-success">
+                                        
+                                        <td scope="row">{{irrf_range.low_amount}}</td>
+                                        <td scope="row">{{irrf_range.high_amount}}</td>
+                                        <td scope="row">{{irrf_range.rate}}</td>
+                                        <td scope="row">{{irrf_range.deduction_amount}}</td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+    
+                    {% endfor %}
+                    
+                {% else %}
+                <p class="h2">Tabelas de IRRF</p>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Nenhuma informação cadastrada.
+                </div>
+                
+                {% endif %}
+            </div> <!-- col 8-->
+
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

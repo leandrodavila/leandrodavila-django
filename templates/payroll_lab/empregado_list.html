@@ -1,0 +1,103 @@
+{% extends "base_generic_top.html" %}
+{% load static %}
+{% block content %}
+
+<main class="flex-fill p-3 overflow-auto">
+    
+    <div class="container-fluid">
+
+        <div class="row flex-nowrap">
+        
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 ">
+
+                {% include "base_generic_payroll_lab.html" %}      
+                
+            </div>
+
+            <div class="col-sm-8">
+            
+                {% if empregado_list %}
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-building-user"></i> Empregados </h4>
+
+                            <table border="0" width="100%">
+                                <tr>
+                                    <td align="right">
+                                        <a href="#" class="btn btn-primary btn-sm">Adicionar Empregado <i class="fas fa-add"></i></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="right">
+                                        
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <table class="table table-hover" border="1" width="50">
+                                <thead>
+                                <tr class="table-secondary">
+                                    <th scope="col" align="right">Matricula</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Data Admissão</th>
+                                    <th scope="col">Tipo de Salário</th>
+                                    <th scope="col" align="right">Valor do Salário</th>
+                                    <th scope="col">&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for empregado in empregado_list %}
+                                    <tr class="table-warning">
+                                        
+                                        <td scope="row"><a href="{{ empregado.get_absolute_url }}">{{ empregado.matricula }}</a></td>
+                                        <td scope="row">{{empregado.nome}}</td>
+                                        <td scope="row">{{empregado.data_admissao}}</td>
+                                        <td scope="row">{{empregado.unidade_salario}} - {{empregado.get_unidade_salario_display}}</td>
+                                        <td scope="row">{{empregado.salario}}</td>
+                                        <td scope="row" align="right">
+                                            <div class="dropstart">
+                                                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                  Ações
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                  <li><a class="dropdown-item" href="#">Alterar</a></li>
+                                                  <li><a class="dropdown-item" href="#">Excluir</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    
+                    
+                {% else %}
+                <p class="h2">Tabelas de INSS</p>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Nenhuma informação cadastrada.
+                </div>
+          
+
+                
+                {% endif %}
+            </div> <!-- col 8-->
+
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+
+
+  

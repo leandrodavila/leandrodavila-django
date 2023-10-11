@@ -1,0 +1,235 @@
+{% extends "base_generic_top.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  
+  <br>
+
+<!--
+  <div class="pagetitle">
+    <h1>Perfil</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="breadcrumb-item active">Perfil</li>
+      </ol>
+    </nav>
+  </div>
+-->
+
+  <section class="section profile">
+    <div class="row">
+      <div class="col-xl-4">
+
+        <div class="card">
+          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+            <img src="{% static '/img/profile_leandro.png' %}" alt="Profile" class="rounded-circle">
+            <h2>Leandro D'Avila</h2>
+            <h3>Analista de Sistemas</h3>
+            <div class="social-links mt-2">
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/leandro-ferreira-davila/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/leandrodavila" class="github" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-xl-8">
+
+        <div class="card">
+          <div class="card-body pt-3">
+            <!-- Bordered Tabs -->
+            <ul class="nav nav-tabs nav-tabs-bordered">
+
+              <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+              </li>
+
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Experiência</button>
+              </li>
+
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Publicações/Projetos Pessoais</button>
+              </li>
+
+            </ul>
+            <div class="tab-content pt-2">
+
+              <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                <h5 class="card-title">Sobre</h5>
+                <div Align="justify">
+                  <strong>Mestre em Computação Aplicada</strong> pela Universidade do Vale do Rio dos Sinos, <strong>com graduação</strong> em Sistemas de Informação pela Pontifícia Universidade Católica do Rio Grande do Sul e uma <strong>pós-graduação</strong> em Gestão Trabalhista e Previdenciária na BSSP. Ele atualmente é especialista em produtos e desenvolvimento de software na SAP, com sólida experiência em gestão de produtos, arquitetura de sistemas de computação e desenvolvimento de sistemas de folha de pagamento e eSocial.
+                  O mais importante, pai de duas filhas lindas!
+                </div>
+                <p class="small fst-italic">
+                <br>Leva 20 anos pra ter 20 anos de experiência! (GOGGINS, David. Can't Hurt Me:Master Your Mind and Defy the Odds. 1º Ed. Austin: Lioncrest Publishing, 2018)
+                </p>
+
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                <!-- Default Accordion -->
+                <div class="accordion" id="accordionExample">
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <strong>Local Product Manager for HCM Brazil</strong> - SAP Labs Latim América, São Leopoldo/RS (2020 - atualmente)
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+
+                        <ul>
+                          <li>Detalhamento de requisitos de negócio para adapção dos sitemas de HCM/Folha de Pagamento para legislação brasileira</li>
+                          <li>Definição de roadmap de produtos</li>
+                          <li>Avaliação de alterações legais de folha de pagamento para adaptação dos produtos</li>
+                          <li>Participação em grupos de trabalho do eSocial junto ao governo brasileiro</li>
+                          <li>Reuniões com clientes e parceiros para validação de cenários e construção de novas funcionalidades</li>
+                          <li>Testes de aceite de soluções e alinhamentos com times globais</li>
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <strong>Product Owner for HCM Brazil</strong> - SAP Labs Latim América, São Leopoldo/RS (2016 - 2020)
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+
+                        <ul>
+                          <li>Definição de backlogs de desenvolvimento</li>
+                          <li>Priorização de de backlogs de desenvolvimento em alinhamento com os times de negócio e desenvolviment</li>
+                          <li>Organização e planejamento de Sprints de desenvolvimento utilizado as metodologias ágeis</li>
+                          <li>Apoio e liderança ao time de desenvolvimento</li>
+                          <li>Participação em grupos de trabalho do eSocial junto ao governo brasileiro</li>
+                          <li>Avaliação de incidentes e priorização de correções de defeitos</li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <strong>Senior Software Engineer</strong> - SAP Labs Latim América, São Leopoldo/RS (2015 - 2016)
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+
+                        <ul>
+                          <li>Desenvolvimento e manutenção de sistemas de folha de pagamento</li>
+                          <li>Implementação do eSocial na solução de folha</li>
+                          <li>Testes manuais e automáticos de software</li>
+                          <li>Definição e desenvolvimento de Arquitetura e Frameworks de sistemas</li>
+                          <li>Resolução de incidentes e chamados de clientes</li>
+                          <li>Organização e Participação das principais cerimônias definidas nas metodologias ágeis</li>
+                        </ul>                      
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <strong>Senior Software Engineer</strong> - ADP Brasil Ltda, Porto Alegre/RS (2012 - 2015)
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+
+                        <ul>
+                          <li>Desenvolvimento e manutenção de sistemas de folha de pagamento</li>
+                          <li>Implementação de compomentes de mensageria do eSocial em Java</li>
+                          <li>Implementação de backend (REST API) em Java para soluções mobile</li>
+                          <li>Definição e desenvolvimento de Arquitetura e Frameworks de sistemas</li>
+                          <li>Resolução de incidentes e chamados de clientes</li>
+                          <li>Suporte/Deploy em ambientes produtivos Cloud</li>
+                          <li>Desenvolvimento e manutenção de ferramenta própria de versionamento de deploy de sistemas</li>
+                        </ul>                      
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!-- End Default Accordion Example -->              
+
+              </div>
+
+              <div class="tab-pane fade pt-3" id="profile-settings">
+
+                <!-- Accordion without outline borders -->
+                <div class="accordion" id="accordionFlushExample_proj">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne_proj">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne_proj" aria-expanded="true" aria-controls="flush-collapseOne_proj">
+                      <strong>SW-Context: Um Modelo para Software Analytics Baseado em Sensibilidade ao Contexto</strong>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne_proj" class="accordion-collapse collapse show"  aria-labelledby="flush-headingOne_proj" data-bs-parent="#accordionFlushExample_proj">
+                      <div class="accordion-body">
+                        Dissertação do meu mestrado (2017) que apresenta o <strong>SW-Context</strong>, um modelo que permite a combinação de diferentes informações relacionadas a artefatos de software, a fim de aprimorar a consciência situacional dos desenvolvedores nas atividades de desenvolvimento e manutenção.
+                        <br><br>
+                        <code>Link da publicação:&nbsp;<a href="http://www.repositorio.jesuita.org.br/handle/UNISINOS/6285" target="_blank">http://www.repositorio.jesuita.org.br/handle/UNISINOS/6285</code></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo_proj">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo_proj" aria-expanded="false" aria-controls="flush-collapseTwo_proj">
+                        <strong>Effects of Contextual Information on Maintenance Effort: A Controlled Experiment</strong>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo_proj" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo_proj" data-bs-parent="#accordionFlushExample_proj">
+                      <div class="accordion-body">
+                        Artigo publicado no <a href="https://www.sciencedirect.com/journal/journal-of-systems-and-software" target="_blank">JSS (Journal of Systems and Software)</a> em janeiro de 2020.
+                        <br><br>
+                        <code>Link da publicação:&nbsp;<a href="https://doi.org/10.1016/j.jss.2019.110443" target="_blank">https://doi.org/10.1016/j.jss.2019.110443</code></a>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree_proj">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree_proj" aria-expanded="false" aria-controls="flush-collapseThree_proj">
+                        <strong>SW-Context: a model to improve developers’ situational awareness</strong>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree_proj" class="accordion-collapse collapse" aria-labelledby="flush-headingThree_proj" data-bs-parent="#accordionFlushExample_proj">
+                      <div class="accordion-body">
+                        Artigo publicado no <a href="https://www.theiet.org/" target="_blank">IET (Institution of Engineering and TechnologyReceived)</a> em outubro de 2020.
+                        <br><br>
+                        <code>Link da publicação:&nbsp;<a href="https://digital-library.theiet.org/content/journals/10.1049/iet-sen.2018.5156" target="_blank">https://digital-library.theiet.org/content/journals/10.1049/iet-sen.2018.5156</code></a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div><!-- End Accordion without outline borders -->
+
+
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+
+  
